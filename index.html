@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog ISMA-4</title>
+    <script src="Simulación.js"></script>
+
+    <style>
+        /* Estilos generales */
+        body {
+       font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #7AD0F6; /* Color de fondo */
+            color: #333;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #333;
+        }
+        /* Estilos para los temas */
+        .temas {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        .tema {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            cursor: pointer;
+            overflow: hidden;
+        }
+        .tema:hover {
+            transform: translateY(-5px);
+        }
+        .tema h2 {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+            color: #333;
+        }
+        .tema p {
+            font-size: 1em;
+            color: #777;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 100;
+            -webkit-box-orient: vertical;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .content {
+            padding: 20px;
+            /* Estilo para el contenido principal de la página */
+        }
+
+        /* Estilos para el footer */
+        footer {
+            padding: 20px;
+            text-align: center;
+            font-size: 16px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        footer h2 {
+            margin-bottom: 10px;
+            font-size: 20px;
+            color: #333; /* Color de texto oscuro */
+        }
+
+        footer ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        footer ul li {
+            margin-bottom: 8px;
+        }
+
+        footer ul li:last-child {
+            margin-bottom: 0;
+        }
+
+        footer a {
+            color: #333; /* Color de enlace */
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Simulación</h1>
+            <div class="tema">
+                <h2>3.1 Conceptos básicos </h2>
+                      <p>
+Un generador de números aleatorios es un dispositivo informático o físico, diseñado para producir secuencias de números sin un orden aparente.
+<p><hr><strong>Algoritmos</strong></hr>
+<br><p>Los algoritmos para la generación de valores uniformemente distribuidos están presentes en todas las calculadoras y lenguajes de programación, y suelen estar basados en congruencias numéricas del tipo:</br>
+</p>
+<img src="imagen 1.jpg" alt="Descripción de la imagen">
+<div id="contenido1" style="display: none;">
+<p>El éxito de este tipo de generadores de valores de una variable aleatoria depende de la elección de los cuatro parámetros que intervienen inicialmente en la expresión anterior:
+<br>El valor inicial o semilla:<img src="imagen 2.jpg" alt="Descripción de la imagen"></br>
+<br>La constante multiplicativa:<img src="imagen 3.jpg" alt="Descripción de la imagen"></br>
+<br>La constante aditiva:<img src="imagen 4.jpg" alt="Descripción de la imagen"></br>
+<br>El número m respecto al cual se calculan los restos
+Estos cuatro valores deben ser números enteros no negativos y que cumplan la Siguiente condición: x0, a, c < m
+La mayor parte de los generadores de números aleatorios son, en realidad, pseudoaleatorios; se calcula (o introduce internamente) un valor x0, que llamaremos semilla, y, a partir de él, se van generando x1, x2, x3,...
+Siempre que se parta de la misma semilla, se obtendrá la misma secuencia de valores.
+Por la condición anterior, es evidente que todos los valores generados por este procedimiento son números enteros entre 0 y m-1. El número máximo de cifras distintas que pueden obtenerse con el procedimiento descrito es, así que llegará un momento en que el primer número generado se repetirá produciéndose un ciclo.
+El ciclo dónde inevitablemente caerá el generador interesa que sea de la mayor longitud posible (como máximo), para evitar que se repitan pronto los valores aleatorios. Por ejemplo, para los valores a=3,c = 5,x0 =2 y m=32 y se obtiene la siguiente secuencia de valores:
+2-11-6-23-10-3-14-15-18-27-22-7-26-19-30-31-2-11-6
+La secuencia generada tiene como longitud 16 números (el número generado en la decimoséptima posición es el 2 inicial, por lo que toda la secuencia se repite a partir de ahí), muy inferior a la longitud máxima que podría tener (=32). Determinadas elecciones de parámetros del generador (x0, a, c, y m) conducen a ciclos de amplitud máxima.
+</br>
+<br>Si c≠0:</br><img src="imagen 5.jpg" alt="Descripción de la imagen">
+<br>Rectificación m.c.d.(c,m)=1 Máximo común divisor
+A = 1 (mod P) para cada primo p de m
+A = 1 (mod 4) si 4 es divisor de m
+Si c=0:
+m es primo
+  para cada factor primo p de m-1 (Rectificación: la condición es que NO SEA congruente para cada factor primo p de m-1).Por ejemplo, tomando como valores   ,  se obtiene la siguiente secuencia de números, que tiene longitud máxima: 1-8-11-26-5-28-15-14-9-16-19-2-13-4-23-22-17-24-27-10-21-12-31-30-25-0-3-18-
+29-20-7-6-1</br>
+</p></p>
+      </div>
+      <a href="#" class="boton" onclick="mostrarContenido(event, 'contenido1')">Leer más</a>
+            </div>
+            <div class="tema">
+                <h2>3.2 Variables aleatorias discretas </h2>
+<p>Variable aleatoria discreta: una V.A. es discreta si su recorrido es un conjunto discreto.
+En gran cantidad de experimentos aleatorios es necesario cuantificar los resultados, es decir, asignar a cada resultado del experimento un número, con el fin de poder realizar un estudio matemático.
+<p>Por ejemplo: si realizamos el experimento de salir a calle y seleccionar 10 personas al azar para un examen sorpresa de matemáticas, podemos definir la variable aleatoria A:
+
+<br>A = número de personas que aprobaron el examen. 
+<br>Los valores que asume A (en su rango), van del 0 al 10 (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10). El rango lo expresaríamos de la siguiente manera:
+
+<br>RA = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
+<br>La variable aleatoria A asume un número contable de valores, por ello, es una variable aleatoria discreta. 
+</p>
+            </div>
+            <div class="tema">
+                <h2>3.3 Variables aleatorias continuas</h2>
+<p>Es aquella que puede tomar infinitos valores dentro de un intervalo de la recta real. 
+<br>En el caso de variables aleatorias continuas no tiene sentido plantearse probabilidades de resultados aislados. La probabilidad de valores puntuales es cero.
+<br>El interés de estas probabilidades está en conocer la probabilidad correspondiente a un intervalo. Dicha probabilidad se conoce mediante una curva llamada función de densidad y suponiendo que bajo dicha curva hay un área de una unidad.
+<br>Conociendo esta curva, basta calcular el área correspondiente para conocer la probabilidad de un intervalo cualquiera.
+<p><strong>Por ejemplo:</strong> 
+<br>Si realizamos el experimento de ir a mi granja y estudiamos las características de las vaquitas, podemos definir la variable aleatoria C:
+
+<br>B = peso de una vaca en la granja de Jorge (en kilogramos).
+<br>Alguna vaquita puede pesar 425,1872 kg; otra puede pesar 612,5874541 kg; otra puede pesar 545,897512121 kg. Si tomamos más vacas, podríamos tener más valores y nunca terminaríamos. 
+
+<br>Se conoce que el becerro más pequeño tiene un peso de 30 kg, y la vaca más grande tiene un peso de 1000 kg.
+
+<br>
+Y así, tendríamos un número incontable de valores para el rango de esta variable. El rango de esta variable puede ser cualquier valor dentro del intervalo que va desde 30 kg hasta 1000 kg. 
+
+Por ello, se trata de una variable aleatoria continua. 
+</p>
+</p>
+            </div>
+            <div class="tema">
+                <h2>3.4 Métodos para generar variables aleatorias </h2>
+<p>Existen varios métodos que nos permiten generar variables aleatorias. Lo normal es que existan varias opciones para generar una misma variable aleatoria. 
+<br>La elección del método adecuado se puede basar en una serie de factores como:</br>
+<br><strong>Exactitud:</strong>se prefiere un método exacto frente a métodos aproximados, como soluciones numéricas.</br>
+<br><strong>Velocidad:</strong> Uno de los datos que se toma en consideración es el tiempo de generación de la variable.</br>
+<br><strong>Espacio:</strong> Necesidades de memoria del método utilizado. En general, los métodos no consumen mucha memoria.</br>
+</p>
+            </div>
+            <div class="tema">
+                <h2>3.4.1 Método de la transformada inversa</h2>
+                <p>El método de la transformada (o transformación) inversa, también conocido como método de la inversa de la transformada, es un método para la generación de números aleatorios de cualquier distribución de probabilidad continua cuando se conoce la inversa de su función de distribución (cdf). 
+
+<br>Este método es en general aplicable, pero puede resultar muy complicado obtener una expresión analítica de la inversa para algunas distribuciones de probabilidad. El método de Box-Müller es un ejemplo de algoritmo que aunque menos general, es más eficiente desde el punto de vista computacional.</br>
+El método se utiliza para simular valores de las distribuciones exponenciales, Cauchy, triangular, de Pareto y Weibull.
+
+<br>El problema que resuelve el método de la transformada inversa es el siguiente:</br>
+<br>• Sea X una variable aleatoria cuya distribución puede ser descrita por la cdf F.</br>
+<br>• Se desea generar valores de X que están distribuidos según dicha distribución.
+Numerosos lenguajes de programación poseen la capacidad de generar números pseudo-aleatorios que se encuentran distribuidos de acuerdo con una distribución uniforme standard. Si una variable aleatoria posee ese tipo de distribución, entonces la probabilidad de que el número caiga dentro de cualquier su intervalo (a, b) del intervalo entre 0 a 1 es la longitud del su intervalo, o sea b − a.</br>
+
+<br>El método de la transformada inversa funciona de la siguiente manera:
+1. Se genera un número aleatorio a partir de la distribución uniforme standard; se lo llama u.
+2. Se calcula el valor x tal que  F (x) ; y se lo llama X elegido.
+3. Se toma X elegido como el número aleatorio extraído de la distribución caracterizada por F.</br>
+</p>
+            </div>
+            <div class="tema">
+                <h2>3.4.2 Método de convolución</h2>
+<p>Convolución es un operador matemático que transforma dos funciones f y g en una tercera función que en cierto sentido representa la magnitud en la que se superponen f y una versión trasladada e invertida de g. Una convolución es un tipo muy general de media móvil, como se puede observar si una de las funciones se toma como la función característica de un intervalo.
+<p><strong>Ejemplos de aplicación de esta técnica:</strong>
+
+<br>•   Una variable Erlang-k es la suma de k exponenciales.
+<br>•   Una variable Binomial de parámetros n y p es la suma de n variable Bernoulli con probabilidad de éxito p.
+<br>•   La chi-cuadrado con v grados de libertad es la suma de cuadrados de v normales N (0,1).
+<br>•   La suma de un gran número de variables de determinada distribución tiene una distribución normal. Este hecho es usado para generar variables normales a partir de la suma de números U (0,1) adecuados.
+<br>•   Una variable Pascal es la suma de m geométricas.
+<br>•   La suma de dos uniformes tiene una densidad triangular
+<br><strong>Convolución discreta</strong></br>
+Cuando se trata de hacer un procesamiento digital de señal no tiene sentido hablar de convoluciones aplicando estrictamente la definición ya que solo disponemos de valores en instantes discretos de tiempo. Es necesario, pues, una aproximación numérica. Para realizar la convolución entre dos señales, se evaluará el área de la función: x(t) * h (t – t ) . Para ello, disponemos de muestreos de ambas señales en los instantes de tiempo nt, que llamaremos x [k] y h [n – K] y (donde n y k son enteros).
+</p>
+            </div>
+            <div class="tema">
+                <h2>3.4.3 Método de composición</h2>
+<p>Determinar cuál era el método de composición de Wolfgang Amadeus Mozart ha sido una cuestión muy estudiada. La visión decimonónica de este tema¬¬ se basaba a menudo en una concepción romántica e idealizada del proceso de composición; los estudios más recientes han tratado de abordar el asunto a través del examen sistemático de las cartas y documentos que han sobrevivido, llegando a diversas conclusiones.
+<br>El método de composición-conocido también cómo método mixto-permite generar variables aleatorias x cuando estas provienen de una función de densidad fx qué puede expresarse cómo la combinación convexa de distribuciones de probabilidad fi(x). Entonces, la combinación convexa se puede expresar como:
+</p>
+<img src="formula1.jpg" alt="Descripción de la imagen">
+<div id="contenido2" style="display: none;">
+
+<p>Donde:</p>
+<img src="formula2.jpg" alt="Descripción de la imagen">
+<br>
+<img src="Cap1.jpg" alt="Descripción de la imagen">
+<br>
+<img src="Cap2.jpg" alt="Descripción de la imagen">
+<br>
+<img src="Cap3.jpg" alt="Descripción de la imagen">
+<br>
+<img src="Cap4.jpg" alt="Descripción de la imagen">
+ </div>
+      <a href="#" class="boton" onclick="mostrarContenido(event, 'contenido2')">Leer más</a>
+
+            </div>
+            <div class="tema">
+                <h2>3.5 Procedimientos especiales</h2>
+                <p>Existen diferentes tipos de métodos para generar variables aleatorias, pero tambien existen casos especiales para generar estas los cuales son: Las distribución de Poisson parte de la distribución binomial:
+Cuando en una distribución binomial se realiza el experimento un número "n" muy elevado de veces y la probabilidad de éxito "p" en cada ensayo es reducida, entonces se aplica el modelo de distribución de Poisson:
+<strong><br>Se tiene que cumplir que:</strong>
+<br>•   " p " < 0,10</br>
+<br>•   " p * n " < 10</br>
+<br>La distribución de Poisson sigue el siguiente modelo:</br>
+<strong>Vamos a explicarla:</strong>
+<br>El número "e" es 2,71828
+•   " l " = n * p (es decir, el número de veces " n " que se realiza el experimento multiplicado por la probabilidad " p " de éxito en cada ensayo)
+•   " k " es el número de éxito cuya probabilidad se está calculando</br>
+
+-La distribución binomial parte de la distribución de Bernouilli:
+La distribución de Bernouiili se aplica cuando se realiza una sola vez un experimento que tiene únicamente dos posibles resultados (éxito o fracaso), por lo que la variable sólo puede tomar dos valores: el 1 y el 0
+La distribución binomial se aplica cuando se realizan un número "n" de veces el experimento de Bernouiili, siendo cada ensayo independiente del anterior. La variable puede tomar valores entre:
+<br>0: si todos los experimentos han sido fracaso
+<br>n: si todos los experimentos han sido éxitos
+
+</p>
+            </div>
+             <div class="tema">
+                <h2>3.6 Pruebas estadística. (Pruebas de bondad de ajuste)</h2>
+<p>En la construcción del modelo de simulación es importante decidir si un conjunto de datos se ajusta apropiadamente a una distribución específica de probabilidad. 
+<br>Al probar la bondad del ajuste de un conjunto de datos, se comparan las frecuencias observadas FO realmente en cada categoría o intervalo de clase con las frecuencias esperadas teóricamente FE.
+
+<br><strong>Prueba Ji cuadrada</br></strong>
+La prueba Ji cuadrada hace uso de la distribución del mismo nombre para probar la bondad del ajuste al comparar el estadístico de prueba Xo2 con el valor en tablas de la mencionada distribución Ji cuadrada con v grados de libertad y un nivel de significancia alfa
+</p>
+<p>El estadístico de prueba para una prueba de bondad de ajuste es:
+
+Σk(O–E)2E
+donde:
+
+O = valores observados (datos)
+E = valores esperados (de la teoría)
+k = el número de celdas o categorías de datos diferentes
+Los valores observados son los valores de los datos y los valores esperados son los valores que se esperarían obtener si la hipótesis nula fuera cierta. Hay n términos de la forma (O–E)2E
+.
+
+El número de grados de libertad es df = (número de categorías – 1).
+
+La prueba de bondad de ajuste es casi siempre de cola derecha. Si los valores observados y los correspondientes valores esperados no se aproximan entre sí, el estadístico de prueba puede ser muy grande y se situará en la cola derecha de la curva de chi-cuadrado
+<div id="contenido3" style="display: none;">
+
+ <h2>Ejemplo de prueba Chi-cuadrado</h2>
+    <p>Supongamos que tenemos una muestra de 1000 personas y queremos probar si la distribución de edades en esta muestra sigue una distribución normal.</p>
+    
+    <h3>Paso 1: Hipótesis</h3>
+    <p>La hipótesis nula (H0) es que la distribución de edades sigue una distribución normal.</p>
+    
+    <h3>Paso 2: Recolección de datos</h3>
+    <p>Se obtiene la información de las edades de las 1000 personas en la muestra.</p>
+    
+    <h3>Paso 3: Cálculo del estadístico Chi-cuadrado</h3>
+    <p>Se calcula el estadístico Chi-cuadrado comparando las frecuencias observadas con las esperadas bajo la distribución normal.</p>
+    
+    <h3>Paso 4: Comparación con el valor crítico</h3>
+    <p>Se compara el valor calculado del estadístico Chi-cuadrado con el valor crítico de la distribución Chi-cuadrado para determinar si se rechaza la hipótesis nula.</p>
+        </div>
+<a href="#" class="boton" onclick="mostrarContenido(event, 'contenido3')">Leer más</a>
+    </div>
+    <footer>
+        <h2>Créditos</h2>
+        <ul>
+            <li>Desarrollado por:</li>
+            <li>May Alvaro Eduard Antonio</li>
+            <li>Alejandre Acosta Adrel</li>
+            <li>Aranda Aguilar Felix Enrique</li>
+            <li>Vaqueiro Magaña Alexis Eduardo</li>
+            <li>Bojorquez Quevedo Christopher</li>
+        </ul>
+    </footer>
+</body>
+</html>
